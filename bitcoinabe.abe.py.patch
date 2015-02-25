@@ -1,0 +1,15 @@
+diff --git a/Abe/abe.py b/Abe/abe.py
+index 64a0435..a84acd1 100755
+--- a/Abe/abe.py
++++ b/Abe/abe.py
+@@ -1894,8 +1894,8 @@ def serve(store):
+                 }, start_response)
+     elif args.host or args.port:
+         # HTTP server.
+-        if args.host is None:
+-            args.host = "localhost"
++        import socket
++        args.host = socket.gethostbyname(socket.gethostname())
+         from wsgiref.simple_server import make_server
+         port = int(args.port or 80)
+         httpd = make_server(args.host, port, abe)
