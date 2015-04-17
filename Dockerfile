@@ -22,7 +22,7 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 WORKDIR /home
 RUN git clone https://github.com/bitcoin-abe/bitcoin-abe
 
-# build bitcoin-abe
+# build bitcoin-abe, it requires a patch to be run within docker
 WORKDIR /home/bitcoin-abe
 ADD ./bitcoinabe.abe.py.patch /home/bitcoin-abe/abe.py.patch
 RUN patch -p1 < abe.py.patch
