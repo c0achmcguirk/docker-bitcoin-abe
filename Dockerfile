@@ -6,14 +6,14 @@
 # a list of version numbers.
 FROM phusion/baseimage:0.9.16
 MAINTAINER Paul Oliver <docker@paultastic.com>
-ENV REFRESHED_AT 2015-02-25
+ENV REFRESHED_AT 20150418
 
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
 
 # install python
 RUN apt-get -yqq update 
-RUN apt-get -yqq install vim git sqlite sudo wget gcc python-dev python-flup python-crypto
+RUN apt-get -yqq install git sqlite sudo wget python-dev python-flup python-crypto
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*

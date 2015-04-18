@@ -13,10 +13,10 @@ When you have docker running just run the command like this:
 
  ```shell
 docker pull poliver/bitcoin-abe
-docker run -d --name abe -P -p 490001:80 -v <PATH_TO_YOUR_BITCOIN_DIR>:/datadir poliver/bitcoin-abe
+docker run -d --name abe -P -p 49001:80 -v <PATH_TO_YOUR_BITCOIN_DIR>:/datadir poliver/bitcoin-abe
 ```
 
-Then just point your browser to http://dockerhost:490001
+Then just point your browser to http://dockerhost:49001
 
 You should see some magic like this:
 
@@ -40,11 +40,11 @@ $ /Applications/Bitcoin-Qt.app/Contents/MacOS/Bitcoin-Qt \
 
  ```shell
 # On a Mac.
-$ docker run -d --name abe -P -p 490001:80 \
+$ docker run -d --name abe -P -p 49001:80 \
     -v ~/localnet:/datadir poliver/bitcoin-abe
 ```
 
-3. Point your browser at http://dockerhost:490001
+3. Point your browser at http://dockerhost:49001
 
 
 ### How do I point this at the public blockchain?
@@ -55,17 +55,17 @@ $ docker run -d --name abe -P -p 490001:80 \
 
     ```shell
     # on a Mac
-    docker run -d --name abe -P -p 490001:80 \
+    docker run -d --name abe -P -p 49001:80 \
         -v ~/Library/Application Support/Bitcoin:/datadir \
         poliver/bitcoin-abe
 
     # on Linux
-    sudo docker run -d --name abe -P -p 490001:80 -v \
+    sudo docker run -d --name abe -P -p 49001:80 -v \
         ~/.bitcoin:/datadir poliver/bitcoin-abe
 
     # on Windows
-    sudo docker run -d --name abe -P -p 490001:80 -v \
+    sudo docker run -d --name abe -P -p 49001:80 -v \
         %AppData%/Bitcoin:/datadir poliver/bitcoin-abe
     ```
  
-3. Point your browser at http://dockerhost:490001
+3. Point your browser at http://dockerhost:49001
