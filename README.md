@@ -33,7 +33,7 @@ You should see some magic like this:
 $ mkdir -p ~/localnet
 $ /Applications/Bitcoin-Qt.app/Contents/MacOS/Bitcoin-Qt \
     -regtest -dnsseed=0 -connect=<HOST>:<IP> \
-    -datadir=./localnet/'
+    -datadir=./localnet/
 ```
 
 2. Run this docker container, but mount your `localnet` folder mounted at `datadir`:
