@@ -12,8 +12,9 @@ This is a dockerized image for bitcoin-abe. Use it to browse the blockchain.
 When you have docker running just run the command like this:
 
  ```shell
-docker pull poliver/bitcoin-abe
-docker run -d --name abe -P -p 49001:80 -v <PATH_TO_YOUR_BITCOIN_DIR>:/datadir poliver/bitcoin-abe
+$ docker pull poliver/bitcoin-abe
+$ docker run -d --name abe -P -p 49001:80 \
+    -v <PATH_TO_YOUR_BITCOIN_DIR>:/datadir poliver/bitcoin-abe
 ```
 
 Then just point your browser to http://dockerhost:49001
