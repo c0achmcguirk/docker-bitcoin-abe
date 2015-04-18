@@ -29,21 +29,21 @@ You should see some magic like this:
 
 1. Run the reference client [Bitcoin-qt](https://bitcoin.org/en/download) from the command line like this:
 
- ```shell
-# Example on a Mac
-$ mkdir -p ~/localnet
-$ /Applications/Bitcoin-Qt.app/Contents/MacOS/Bitcoin-Qt \
-    -regtest -dnsseed=0 -connect=<HOST>:<IP> \
-    -datadir=./localnet/
-```
+    ```shell
+    # Example on a Mac
+    $ mkdir -p ~/localnet
+    $ /Applications/Bitcoin-Qt.app/Contents/MacOS/Bitcoin-Qt \
+        -regtest -dnsseed=0 -connect=<HOST>:<IP> \
+        -datadir=./localnet/
+    ```
 
 2. Run this docker container, but mount your `localnet` folder mounted at `datadir`:
 
- ```shell
-# On a Mac.
-$ docker run -d --name abe -P -p 49001:80 \
-    -v ~/localnet:/datadir poliver/bitcoin-abe
-```
+    ```shell
+    # On a Mac.
+    $ docker run -d --name abe -P -p 49001:80 \
+        -v ~/localnet:/datadir poliver/bitcoin-abe
+    ```
 
 3. Point your browser at http://dockerhost:49001
 
