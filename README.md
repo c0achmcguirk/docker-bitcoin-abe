@@ -1,7 +1,6 @@
 # Bitcoin-abe Docker Container
 
-Have you ever wanted to browse a local testnet blockchain? Or perhaps you wanted to have an easy
-way to deploy docker containers running a blockchain browser?
+Have you ever wanted to browse a local testnet blockchain? Or perhaps you wanted to have an easy way to deploy docker containers running a blockchain browser?
 
 [Bitcoin-abe](http://github.com/bitcoin-abe/bitcoin-abe) is like blockchain.io or blockerexplorer.com but you get to run its magic.
 
@@ -19,6 +18,10 @@ $ docker run -d --name abe -P -p 49001:80 \
 *This image includes `EXPOSE 80`, so we can remap a port (in the example above `49001`) in the docker host to port `80` in the container.*
 
 Then just point your browser to http://dockerhost:49001
+
+***Note to Linux Users**: `dockerhost` is your local IP address. `127.0.0.1`*
+
+***Note to Mac or Windows Users**: `dockerhost` is typically `192.168.59.103`, but this can change based on your Oracle VirtualBox settings. You can always check for the IP address by running  `docker-machine ip` from the command line on Mac or Windows.*
 
 You should see some magic like this:
 
@@ -43,10 +46,14 @@ You should see some magic like this:
     ```shell
     # On a Mac.
     $ docker run -d --name abe -P -p 49001:80 \
-        -v ~/localnet:/datadir poliver/bitcoin-abe
+        -v ~/localnet/regtest:/datadir poliver/bitcoin-abe
     ```
 
 3. Point your browser at http://dockerhost:49001
+
+***Note to Linux Users**: `dockerhost` is your local IP address. `127.0.0.1`*
+
+***Note to Mac or Windows Users**: `dockerhost` is typically `192.168.59.103`, but this can change based on your Oracle VirtualBox settings. You can always check for the IP address by running  `docker-machine ip` from the command line on Mac or Windows.*
 
 
 ### How do I point this at the public blockchain?
@@ -66,8 +73,13 @@ You should see some magic like this:
         ~/.bitcoin:/datadir poliver/bitcoin-abe
 
     # on Windows
-    sudo docker run -d --name abe -P -p 49001:80 -v \
+    docker run -d --name abe -P -p 49001:80 -v \
         %AppData%/Bitcoin:/datadir poliver/bitcoin-abe
     ```
  
 3. Point your browser at http://dockerhost:49001
+
+***Note to Linux Users**: `dockerhost` is your local IP address. `127.0.0.1`*
+
+***Note to Mac or Windows Users**: `dockerhost` is typically `192.168.59.103` or `192.168.99.100`, but this can change based on your Oracle VirtualBox settings. You can always check for the IP address by running  `docker-machine ip` from the command line on Mac or Windows.*
+
